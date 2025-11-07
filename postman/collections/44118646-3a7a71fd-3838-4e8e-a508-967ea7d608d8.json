@@ -1,0 +1,891 @@
+{
+	"info": {
+		"_postman_id": "44118646-3a7a71fd-3838-4e8e-a508-967ea7d608d8",
+		"name": "Test Task NordCodes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Validation Tests",
+					"item": [
+						{
+							"name": "400 no password",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "a38d61b8-e076-441d-bdb9-e790adfa62b5",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
+							"id": "44118646-fa9df5ad-04ed-4e9d-a7d0-aed2cde8572c",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "{{username}}",
+											"type": "text",
+											"uuid": "ac8f2d80-4637-4f0c-a6c0-d7886498d2a3"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{authEndpoint}}",
+									"host": [
+										"{{baseURL}}{{authEndpoint}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "403 wrong password",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "a38d61b8-e076-441d-bdb9-e790adfa62b5",
+										"exec": [
+											"pm.test(\"Status code is 403\", function () {\r",
+											"    pm.response.to.have.status(403);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
+							"id": "44118646-2da5f1b2-9a23-4c68-a6e7-f2f9c5125fcb",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "{{username}}",
+											"type": "text",
+											"uuid": "ac8f2d80-4637-4f0c-a6c0-d7886498d2a3"
+										},
+										{
+											"key": "password",
+											"value": "qazWSXedc1",
+											"type": "text",
+											"uuid": "70eca5ec-8d75-4262-b73e-f4349448c422"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{authEndpoint}}",
+									"host": [
+										"{{baseURL}}{{authEndpoint}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "403 wrong username",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "a38d61b8-e076-441d-bdb9-e790adfa62b5",
+										"exec": [
+											"pm.test(\"Status code is 403\", function () {\r",
+											"    pm.response.to.have.status(403);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
+							"id": "44118646-e0d6cb31-08ff-4e04-b5e2-ea95c1a37ec6",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "admin1",
+											"type": "text",
+											"uuid": "ac8f2d80-4637-4f0c-a6c0-d7886498d2a3"
+										},
+										{
+											"key": "password",
+											"value": "{{password}}",
+											"type": "text",
+											"uuid": "70eca5ec-8d75-4262-b73e-f4349448c422"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{authEndpoint}}",
+									"host": [
+										"{{baseURL}}{{authEndpoint}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "405 wrong method",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "a38d61b8-e076-441d-bdb9-e790adfa62b5",
+										"exec": [
+											"pm.test(\"Status code is 403\", function () {\r",
+											"    pm.response.to.have.status(403);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
+							"id": "44118646-808d4b43-ff74-40ef-a28a-51189d01cf76",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "{{username}}",
+											"type": "text",
+											"uuid": "ac8f2d80-4637-4f0c-a6c0-d7886498d2a3"
+										},
+										{
+											"key": "password",
+											"value": "{{password}}",
+											"type": "text",
+											"uuid": "70eca5ec-8d75-4262-b73e-f4349448c422"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{authEndpoint}}",
+									"host": [
+										"{{baseURL}}{{authEndpoint}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "400 no username",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "7d9f62f9-79e7-49e6-80a2-2c59c2459491",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
+							"id": "44118646-8e3a3134-4be0-4840-a906-3993b4c28ce2",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "password",
+											"value": "{{password}}",
+											"type": "text",
+											"uuid": "10f904e2-7012-438d-a64b-3ff45596e5b4"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{authEndpoint}}",
+									"host": [
+										"{{baseURL}}{{authEndpoint}}"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "44118646-09cb0558-f936-4ded-aa25-4b1d44373b41"
+				},
+				{
+					"name": "Authorization",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "55546fe7-8507-4ec3-a619-29e47332f773",
+								"exec": [
+									"pm.test(\"Проверка статус кода 200\", function(){\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"response time is less 500ms\", ()=>{\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+									"})\r",
+									"\r",
+									"var response = pm.response.json();\r",
+									"pm.environment.set(\"token\", response.token);\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "44118646-fc2a1933-baaf-443a-a876-3c84e6579ed9",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "text",
+									"uuid": "2ff066c6-48f6-4a3d-8f95-e3c3993c3e1d"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "text",
+									"uuid": "fadc00d7-340b-4f7b-ac88-db80960de544"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}{{authEndpoint}}",
+							"host": [
+								"{{baseURL}}{{authEndpoint}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "44118646-febc051c-3b95-40d3-ab49-8d664b5fa01e"
+		},
+		{
+			"name": "Transaction",
+			"item": [
+				{
+					"name": "Validation tests",
+					"item": [
+						{
+							"name": "400 wrong body action",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2902a2d1-52ff-4744-9295-9e3acdfaae22",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
+							"id": "44118646-9e5aa23f-25d3-4d9e-a86f-e27835e59e13",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "X-Api-Key",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "action",
+											"value": "RETURN",
+											"type": "text",
+											"uuid": "5e055741-435e-4352-bd6d-8876e4cc6439"
+										},
+										{
+											"key": "amount",
+											"value": "250",
+											"type": "text",
+											"uuid": "8d504476-bb6b-4358-83d2-4637ec42ec57"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{transactionEndpoint}}",
+									"host": [
+										"{{baseURL}}{{transactionEndpoint}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "401 without token header",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "aa191277-803a-4286-b7e3-2da46902b50a",
+										"exec": [
+											"pm.test(\"Status code is 401\", function () {\r",
+											"    pm.response.to.have.status(401);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
+							"id": "44118646-ecd1c225-20fc-4f57-b160-6a17fc4c8117",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "action",
+											"value": "WITHDRAW",
+											"type": "text",
+											"uuid": "5e055741-435e-4352-bd6d-8876e4cc6439"
+										},
+										{
+											"key": "amount",
+											"value": "250",
+											"type": "text",
+											"uuid": "8d504476-bb6b-4358-83d2-4637ec42ec57"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{transactionEndpoint}}",
+									"host": [
+										"{{baseURL}}{{transactionEndpoint}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "400(Bug) transfer negative amount",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "be24d850-fc41-43c0-b4c2-72ea6f5f3e4c",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
+							"id": "44118646-2dc8a7c1-3330-4ea2-b1c6-3a7f18975102",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "X-Api-Key",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "action",
+											"value": "WITHDRAW",
+											"type": "text",
+											"uuid": "5e055741-435e-4352-bd6d-8876e4cc6439"
+										},
+										{
+											"key": "amount",
+											"value": "-100",
+											"type": "text",
+											"uuid": "8d504476-bb6b-4358-83d2-4637ec42ec57"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{transactionEndpoint}}",
+									"host": [
+										"{{baseURL}}{{transactionEndpoint}}"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "44118646-2892e69d-fe3f-483f-ab4f-9f5207ea93b1"
+				},
+				{
+					"name": "Transaction",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9373fc95-ba32-4ea8-991f-3be9b9121a38",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "44118646-e4749a43-999e-4ebd-863e-553066ad6718",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Api-Key",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "action",
+									"value": "WITHDRAW",
+									"type": "text",
+									"uuid": "5e055741-435e-4352-bd6d-8876e4cc6439"
+								},
+								{
+									"key": "amount",
+									"value": "250",
+									"type": "text",
+									"uuid": "8d504476-bb6b-4358-83d2-4637ec42ec57"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}{{transactionEndpoint}}",
+							"host": [
+								"{{baseURL}}{{transactionEndpoint}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "44118646-4deb4e3c-3aa2-4868-ba11-4cc601d384dc"
+		},
+		{
+			"name": "Logout",
+			"item": [
+				{
+					"name": "Validation tests",
+					"item": [
+						{
+							"name": "405 wrong method",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "60fe73f9-ed1e-4f9d-aae7-78b5c9cf2cfa",
+										"exec": [
+											"pm.test(\"Status code is 405\", function () {\r",
+											"    pm.response.to.have.status(405);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
+							"id": "44118646-9a700439-9983-4f15-80a8-1382a8b296c8",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "X-Api-Key",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{baseURL}}{{logoutEndpoint}}",
+									"host": [
+										"{{baseURL}}{{logoutEndpoint}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "405 wrong endpoint",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "60fe73f9-ed1e-4f9d-aae7-78b5c9cf2cfa",
+										"exec": [
+											"pm.test(\"Status code is 500\", function () {\r",
+											"    pm.response.to.have.status(500);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
+							"id": "44118646-825820b7-9a0b-4a5e-8b40-bd9dc9cd1cac",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "X-Api-Key",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{baseURL}}/logou",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"logou"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "44118646-fddda28d-d502-42aa-b082-4a4f394588dd"
+				},
+				{
+					"name": "Logout(Bug)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "dd63d07f-a2c8-4737-99b9-a93c90396a04",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "44118646-550ddea0-b45f-49d2-8025-fd3af25171e4",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Api-Key",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{baseURL}}{{logoutEndpoint}}",
+							"host": [
+								"{{baseURL}}{{logoutEndpoint}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout(Works)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "dd63d07f-a2c8-4737-99b9-a93c90396a04",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "44118646-7b1d5b95-95d8-4470-aaac-b635d13d4e51",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Api-Key",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{baseURL}}{{logoutEndpoint}}",
+							"host": [
+								"{{baseURL}}{{logoutEndpoint}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "44118646-42ba8ed6-23a9-4511-ad7b-f560a3505c6f"
+		}
+	]
+}
